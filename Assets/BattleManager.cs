@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -117,13 +118,13 @@ public class BattleManager : MonoBehaviour
                     else if (player1.CharacterList.Count == 0)
                     {
                         battleResult.SetActive(true);
-                        //battleResultText.text = 
+                        battleResultText.text = "Battle is Over!\nPlayer 2 win!";
                         state = State.BattleIsOver;
                     }
                     else if (player2.CharacterList.Count == 0)
                     {
                         battleResult.SetActive(true);
-                        //battleResultText.text = 
+                        battleResultText.text = "Battle is Over!\nPlayer 1 win!";
                         state = State.BattleIsOver;
                     }
                     else
@@ -178,5 +179,13 @@ public class BattleManager : MonoBehaviour
             winner = null;
             loser = null;
         }
+    }
+
+    public void Replay(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void Quit(){
+        SceneManager.LoadScene("Main");
     }
 }

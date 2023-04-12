@@ -2803,10 +2803,10 @@ RectTransform:
   m_Father: {fileID: 2044635833}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -350}
+  m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810663641
 MonoBehaviour:
@@ -3071,7 +3071,7 @@ MonoBehaviour:
   type: 1
   currentHP: 100
   maxHP: 100
-  attackPower: 20
+  attackPower: 1000
   overHead: {fileID: 1989994723}
   avatar: {fileID: 1341782960}
   nameText: {fileID: 842570874}
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   type: 0
   currentHP: 100
   maxHP: 100
-  attackPower: 20
+  attackPower: 1000
   overHead: {fileID: 1378239710}
   avatar: {fileID: 1835556257}
   nameText: {fileID: 1198227792}
@@ -4138,7 +4138,7 @@ MonoBehaviour:
   type: 0
   currentHP: 100
   maxHP: 100
-  attackPower: 20
+  attackPower: 1000
   overHead: {fileID: 1662758697}
   avatar: {fileID: 1097215383}
   nameText: {fileID: 909335886}
@@ -5882,9 +5882,9 @@ RectTransform:
   m_Father: {fileID: 810663640}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 525, y: -50}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436138355
@@ -5930,7 +5930,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1436138356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1857566377}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1436138356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6355,7 +6367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1612194594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6606,10 +6618,10 @@ RectTransform:
   m_Father: {fileID: 2044635833}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 350, y: -150}
+  m_SizeDelta: {x: 700, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1632290022
 MonoBehaviour:
@@ -6743,9 +6755,9 @@ RectTransform:
   m_Father: {fileID: 810663640}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -50}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1646732280
@@ -6791,7 +6803,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1646732281}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1857566377}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: Replay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1646732281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7202,7 +7226,7 @@ MonoBehaviour:
   type: 2
   currentHP: 100
   maxHP: 100
-  attackPower: 20
+  attackPower: 1000
   overHead: {fileID: 2003666865}
   avatar: {fileID: 1861376476}
   nameText: {fileID: 128167459}
@@ -7312,7 +7336,7 @@ MonoBehaviour:
   type: 1
   currentHP: 100
   maxHP: 100
-  attackPower: 20
+  attackPower: 1000
   overHead: {fileID: 1627451172}
   avatar: {fileID: 43007120}
   nameText: {fileID: 907211772}
@@ -7922,8 +7946,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  battleResult: {fileID: 0}
-  battleResultText: {fileID: 0}
+  battleResult: {fileID: 1612194593}
+  battleResultText: {fileID: 1632290022}
   player1: {fileID: 1134332133}
   player2: {fileID: 1265526391}
 --- !u!1 &1860550485
@@ -8649,7 +8673,7 @@ MonoBehaviour:
   type: 2
   currentHP: 100
   maxHP: 100
-  attackPower: 20
+  attackPower: 1000
   overHead: {fileID: 438596336}
   avatar: {fileID: 1310815287}
   nameText: {fileID: 1407398541}
