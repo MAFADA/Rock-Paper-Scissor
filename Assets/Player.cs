@@ -1,18 +1,32 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] Character selectedCharacter;
-    [SerializeField] List<Character> characterList;
     [SerializeField] Transform atkReference;
+    [SerializeField] bool isBot;
+    [SerializeField] List<Character> characterList;
+    [SerializeField] UnityEvent onTakeDamage;
     public Character SelectedCharacter { get => selectedCharacter; }
     public List<Character> CharacterList { get => characterList; }
+
+    private void Start()
+    {
+        if (isBot)
+        {
+            foreach (var character in characterList)
+            {
+                character.Button.interactable = false;
+            }
+        }
+
+    }
 
     public void Prepare()
     {
@@ -26,10 +40,28 @@ public class Player : MonoBehaviour
 
     public void SetPlay(bool value)
     {
-        foreach (var character in characterList)
+        if (isBot)
         {
-            character.Button.interactable = value;
+            List<Character> weightedList = new List<Character>();
+            foreach (var character in characterList)
+            {
+                int weight = Mathf.CeilToInt(((float)character.CurrentHP / (float)character.MaxHP) * 10);
+                for (int i = 0; i < weight; i++)
+                {
+                    weightedList.Add(character);
+                }
+            }
+            int index = Random.Range(0, weightedList.Count);
+            selectedCharacter = weightedList[index];
         }
+        else
+        {
+            foreach (var character in characterList)
+            {
+                character.Button.interactable = value;
+            }
+        }
+
     }
 
     public void Attack()
@@ -52,6 +84,7 @@ public class Player : MonoBehaviour
         selectedCharacter.ChangeHP(-damageValue);
         var spriteRend = selectedCharacter.GetComponent<SpriteRenderer>();
         spriteRend.DOColor(Color.red, 0.1f).SetLoops(6, LoopType.Yoyo);
+        onTakeDamage.Invoke();
     }
 
     public bool IsDamaging()
